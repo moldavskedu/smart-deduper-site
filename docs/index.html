@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smart Deduper for Google Sheets</title>
+<style>
+  :root{--bg:#0b1321;--panel:#0e172a;--text:#e5e7eb;--muted:#94a3b8;--green:#16a34a;--border:#1f2937}
+  html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,Segoe UI,Inter,Roboto,sans-serif}
+  .wrap{max-width:860px;margin:0 auto;padding:28px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:16px}
+  h1{margin:0 0 6px}.pill{display:inline-block;background:#14532d;color:#a7f3d0;padding:2px 10px;border-radius:999px;font-size:12px}
+  .btn{display:inline-block;background:var(--green);color:#04120a;text-decoration:none;font-weight:700;padding:12px 16px;border-radius:12px}
+  .sub{color:var(--muted)} ul{margin:10px 0 0 18px} a{color:#93c5fd}
+  .grid{display:grid;gap:14px;grid-template-columns:1fr 1fr}@media(max-width:720px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<div class="wrap">
+  <div class="card">
+    <h1>Smart Deduper <span class="pill">Google Sheets add-on</span></h1>
+    <p class="sub">Fast, safe duplicate cleanup. Keeps one row per group in black, marks the rest red. Works across selected sheets, respects first-name differences, blocks 1-digit phone neighbors, and honors Customer/Serial IDs.</p>
+    <p><a class="btn" href="#">Install from Google Workspace Marketplace</a></p>
+    <p class="sub">When your listing is live, update the button link.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Key features</h3>
+      <ul>
+        <li>Smart grouping with strong IDs (Email/Phone/Customer ID/Serial)</li>
+        <li>“Always keep one” enforcement + clear coloring</li>
+        <li>Results & Log pop-outs, Reset colors, Advanced options</li>
+        <li>Zero deletion unless you confirm</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Privacy-friendly</h3>
+      <ul>
+        <li>Runs entirely in your Google account</li>
+        <li>Scopes: <code>script.container.ui</code>, <code>spreadsheets.currentonly</code></li>
+      </ul>
+      <p class="sub">See the <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.</p>
+    </div>
+  </div>
+  <div class="card"><h3>Help & Support</h3><p>Questions? Visit the <a href="support.html">Support page</a>.</p></div>
+  <div class="card sub">© <span id="y"></span> Smart Deduper.</div>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body></html>
