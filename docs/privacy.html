@@ -1,40 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Privacy Policy - Smart Deduper</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Deduper — Google Sheets add-on</title>
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    :root{
+      --bg:#0b1220;           /* page background */
+      --panel:#121a2b;        /* card background */
+      --panel-2:#0f1726;      /* subtle contrast */
+      --text:#e6edf7;         /* primary text */
+      --muted:#9fb0c7;        /* secondary text */
+      --border:#1e2a42;       /* borders/dividers */
+      --accent:#22c55e;       /* green CTA */
+      --accent-contrast:#07140e;
+      --link:#7dd3fc;         /* light-cyan links */
+      --badge:#1e293b;        /* small label bg */
+      --shadow:0 15px 40px rgba(0,0,0,.35);
+      --radius:18px;
+      --radius-sm:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 80% -100px, #0f213b33, transparent 60%) , var(--bg);
+      color:var(--text);
+      font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    .wrap{max-width:1080px; margin-inline:auto; padding:48px 20px 100px}
+    .hero{
+      background:linear-gradient(180deg, var(--panel), var(--panel-2));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px 28px 26px;
+    }
+    .title{display:flex; align-items:center; gap:12px; margin:0 0 10px}
+    .badge{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:5px 10px; border-radius:999px; font-weight:600;
+      background:var(--badge); color:#b1c6e6; font-size:12px; letter-spacing:.2px;
+      border:1px solid var(--border);
+    }
+    h1{font-size:28px; line-height:1.25; margin:0}
+    .lead{color:var(--muted); margin:8px 0 18px; max-width:70ch}
+    .cta{
+      display:inline-block; background:var(--accent); color:#032612;
+      color:var(--accent-contrast);
+      padding:12px 18px; border-radius:12px; font-weight:700; text-decoration:none;
+      border:1px solid #1f8a46; box-shadow:0 8px 24px rgba(34,197,94,.25);
+      transition:transform .06s ease, box-shadow .2s ease;
+    }
+    .cta:hover{transform:translateY(-1px); box-shadow:0 12px 28px rgba(34,197,94,.35)}
+    .cta:active{transform:translateY(0)}
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(12,1fr); margin-top:18px}
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius-sm);
+      padding:18px 18px;
+      box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 8px; font-size:17px}
+    .muted{color:var(--muted)}
+    .list{margin:10px 0 0; padding-left:18px}
+    .list li{margin:6px 0}
+    .link{color:var(--link); text-decoration:none}
+    .link:hover{text-decoration:underline}
+    .footer{
+      margin-top:22px; color:var(--muted); font-size:14px
+    }
+    /* layout placements */
+    .col-6{grid-column:span 6}
+    .col-12{grid-column:span 12}
+    @media (max-width:900px){ .col-6{grid-column:span 12} }
+  </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
+  <div class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="title">
+        <h1>Smart Deduper</h1>
+        <span class="badge">Google Sheets add-on</span>
+      </div>
+      <p class="lead">
+        Fast, safe duplicate cleanup. Keeps one row per group, marks the rest for review. Works across selected sheets,
+        respects name/ID differences, and never deletes without your confirmation.
+      </p>
+      <a class="cta" href="#" title="Install from Google Workspace Marketplace">
+        Install from Google Workspace Marketplace
+      </a>
+      <p class="footer">
+        <span>When your listing is live, update the button link.</span>
+      </p>
+    </section>
 
-  <p>Smart Deduper is a Google Sheets add-on that helps users find and clean duplicate data. 
-  This policy explains how the add-on accesses, uses, protects, and retains user data.</p>
+    <!-- CONTENT GRID -->
+    <section class="grid">
+      <article class="card col-6">
+        <h3>Key features</h3>
+        <ul class="list">
+          <li><strong>Smart IDs:</strong> Email / Phone / Customer ID / Serial</li>
+          <li><strong>“Always keep one”</strong> enforcement with clear coloring</li>
+          <li><strong>Preview & Logs:</strong> pop-outs, reset colors, advanced options</li>
+          <li><strong>No surprise deletions:</strong> nothing removed unless you confirm</li>
+        </ul>
+      </article>
 
-  <h2>1. Data Access</h2>
-  <p>Smart Deduper requests access only to:</p>
-  <ul>
-    <li><strong>https://www.googleapis.com/auth/spreadsheets.currentonly</strong> – to read and update the currently open spreadsheet only.</li>
-    <li><strong>https://www.googleapis.com/auth/script.container.ui</strong> – to display the add-on’s sidebar and dialogs inside Google Sheets.</li>
-  </ul>
-  <p>No other Google services or files are accessed. No personal information, Drive files, or emails are requested.</p>
+      <article class="card col-6">
+        <h3>Privacy-friendly</h3>
+        <ul class="list">
+          <li>Runs entirely in your Google account</li>
+          <li>Scopes: <code>script.container.ui</code>, <code>spreadsheets.currentonly</code></li>
+        </ul>
+        <p class="muted" style="margin-top:10px">
+          See the <a class="link" href="/privacy.html">Privacy Policy</a> and <a class="link" href="/terms.html">Terms</a>.
+        </p>
+      </article>
 
-  <h2>2. Data Use</h2>
-  <p>The accessed spreadsheet data is used solely to:</p>
-  <ul>
-    <li>Identify and highlight duplicate rows.</li>
-    <li>Provide results back to the same spreadsheet at the user’s request.</li>
-  </ul>
-  <p>Data is processed entirely within the user’s Google account and is not transmitted to external servers.</p>
+      <article class="card col-12">
+        <h3>Pricing</h3>
+        <p class="muted" style="margin:6px 0 0">
+          Smart Deduper is <strong>free during Early Access</strong>. We may introduce paid plans in the future.
+          Any change will be announced on this site and in the Marketplace listing, and will apply prospectively
+          (no charges without your action). See <a class="link" href="/terms.html">Terms</a>.
+        </p>
+      </article>
 
-  <h2>3. Data Protection</h2>
-  <p>Smart Deduper does not collect, transmit, or store user data. All processing occurs locally within Google Sheets. 
-  Because no data leaves the Google environment, there is no risk of unauthorized external access.</p>
-
-  <h2>4. Data Retention and Deletion</h2>
-  <p>Smart Deduper does not retain any user data. When the user closes the spreadsheet or removes the add-on, 
-  no copies of their data remain. The user can delete any results written by the add-on directly in their spreadsheet at any time.</p>
-
-  <h2>Contact</h2>
-  <p>If you have questions about this policy, contact us at: <a href="mailto:moldystools@gmail.com">moldystools@gmail.com</a></p>
+      <article class="card col-12">
+        <h3>Help & Support</h3>
+        <p class="muted" style="margin:6px 0 0">
+          Questions or issues? Email <a class="link" href="mailto:moldystools@gmail.com">moldystools@gmail.com</a>.
+        </p>
+      </article>
+    </section>
+  </div>
 </body>
 </html>
